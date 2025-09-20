@@ -47,3 +47,12 @@ python get_viewcount.py dQw4w9WgXcQ
 ```
 
 This will output the current view count as a number. If the video cannot be found or accessed, an error message will be displayed.
+
+## Monitor Loop
+
+The `monitor_loop` function continuously monitors YouTube view counts and updates the on-chain oracle when changes are detected:
+
+- Periodically checks the current view count for a specified video
+- Compares against the last recorded count stored in the blockchain
+- Updates the on-chain oracle contract with the new view count when a change is detected
+- Maintains synchronization between YouTube's real-time data and blockchain state
