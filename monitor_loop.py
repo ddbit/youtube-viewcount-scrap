@@ -1,6 +1,12 @@
 import time
 import argparse
 from web3 import Web3
+
+import sys
+sys.path.append('../kpipay-oracle')
+print("Current sys.path:")
+print(sys.path)
+
 from Performance import ContractPerformance
 from get_viewcount import get_video_views
 
@@ -77,6 +83,7 @@ def monitor_and_update(video_id, loop_time):
     return True
 
 if __name__ == "__main__":
+
     parser = argparse.ArgumentParser(description='Monitor YouTube video views and update Performance contract')
     parser.add_argument('video_id', type=str, help='YouTube video ID to monitor')
     parser.add_argument('--loop-time', type=int, default=300, help='Loop interval in seconds (default: 300 = 5 minutes)')
